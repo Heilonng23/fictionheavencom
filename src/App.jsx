@@ -8,7 +8,7 @@ const tempMovieData = [
     Title: "Inception",
     Year: "2010",
     Poster:
-      "https://m.media-amazon.com/images/M/MV5BM1jAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
   },
   {
     imdbID: "tt0133093",
@@ -84,7 +84,7 @@ export default function App() {
         setIsLoading(true);
         setError("");
         const res = await fetch(
-          `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+          `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`, // Changed to https
           { signal: controller.signal }
         );
 
