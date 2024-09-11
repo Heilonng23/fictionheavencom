@@ -77,7 +77,7 @@ export default function App() {
 
   useEffect(() => {
     const controller = new AbortController();
-
+    console.log("hi");
     async function fetchedMovies() {
       try {
         setIsLoading(true);
