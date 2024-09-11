@@ -323,6 +323,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     Director: director,
     Genre: genre,
   } = movie;
+
   /* eslint-disable*/
   // if (imdbRating > 8) [isTop, setIsTop] = useState(true);
 
@@ -336,7 +337,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   //   [imdbRating]
   // );
 
-  const isTop = imdbRating > 0;
+  const isTop = imdbRating > 8;
   console.log(isTop);
 
   function handleAdd() {
