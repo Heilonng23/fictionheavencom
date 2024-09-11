@@ -77,7 +77,6 @@ export default function App() {
 
   useEffect(() => {
     const controller = new AbortController();
-    console.log("hi");
     async function fetchedMovies() {
       try {
         setIsLoading(true);
@@ -326,6 +325,9 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   } = movie;
   /* eslint-disable*/
   // if (imdbRating > 8) [isTop, setIsTop] = useState(true);
+
+  const [isTop, setIsTop] = useState(imdbRating > 8);
+  console.log(isTop);
 
   function handleAdd() {
     const newWatchedMovie = {
