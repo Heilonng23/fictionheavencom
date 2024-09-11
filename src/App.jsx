@@ -329,6 +329,13 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   const [isTop, setIsTop] = useState(imdbRating > 8);
   console.log(isTop);
 
+  useEffect(
+    function () {
+      setIsTop(imdbRating > 8);
+    },
+    [imdbRating]
+  );
+
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
