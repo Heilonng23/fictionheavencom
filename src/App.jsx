@@ -354,6 +354,8 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     };
     onAddWatched(newWatchedMovie);
     // onCloseMovie();
+
+    setAverageRating(userRating);
   }
   useEffect(
     function () {
@@ -420,6 +422,10 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
               <p>
                 <span>⭐</span>
                 {imdbRating} IMDb Rating
+              </p>
+              <p>
+                <span>⭐</span>
+                {averageRating} Your rating
               </p>
             </div>
           </header>
