@@ -336,6 +336,9 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   //   [imdbRating]
   // );
 
+  const isTop = imdbRating > 0;
+  console.log(isTop);
+
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
