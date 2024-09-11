@@ -351,8 +351,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       userRating,
     };
     onAddWatched(newWatchedMovie);
-    console.log(onAddWatched);
-    onCloseMovie();
+    // onCloseMovie();
   }
   useEffect(
     function () {
