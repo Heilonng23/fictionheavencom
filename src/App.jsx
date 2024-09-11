@@ -340,8 +340,6 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
   const isTop = imdbRating > 8;
   console.log(isTop);
 
-  const [averageRating, setAverageRating] = useState(0);
-
   function handleAdd() {
     const newWatchedMovie = {
       imdbID: selectedId,
@@ -353,9 +351,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       userRating,
     };
     onAddWatched(newWatchedMovie);
-    // onCloseMovie();
-
-    setAverageRating(userRating);
+    onCloseMovie();
   }
   useEffect(
     function () {
@@ -422,10 +418,6 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
               <p>
                 <span>⭐</span>
                 {imdbRating} IMDb Rating
-              </p>
-              <p>
-                <span>⭐</span>
-                {averageRating} Your rating
               </p>
             </div>
           </header>
