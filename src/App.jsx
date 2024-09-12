@@ -77,7 +77,7 @@ export default function App() {
 
   useEffect(
     function () {
-      localStorage.setItem("watcched", JSON.stringify([...watched, movie]));
+      localStorage.setItem("watcched", JSON.stringify(watched));
     },
     [watched]
   );
