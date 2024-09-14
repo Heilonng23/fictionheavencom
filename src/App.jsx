@@ -3,6 +3,7 @@ import "./index.css";
 import StarRating from "./StarRating.jsx";
 import { useMovies } from "./useMovies.jsx";
 import { useLocalStorageState } from "./useLocalStorageState.jsx";
+import { useKey } from "./useKey.jsx";
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
@@ -294,14 +295,14 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       poster,
       imdbRating: Number(imdbRating),
       runtime: Number(runtime.split(" ")[0]), // Fixed to correctly split runtime
+
       userRating,
       countRatingDecisions: countRef.current,
     };
     onAddWatched(newWatchedMovie);
     onCloseMovie();
   }
-
-  const usekey = useKey();
+  useKey("Escape", onCloseMovie);
   useEffect(
     function () {
       function callback(e) {
