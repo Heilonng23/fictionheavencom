@@ -196,6 +196,17 @@ function Logo() {
 function Search({ query, setQuery }) {
   const inputEl = useRef(null);
 
+  useEffect(function () {
+    function callback(e) {
+      if (document.activeElement === inputEl.current) return;
+
+      if (e.code) {
+        inputEl.current.focus();
+        setQuery("");
+      }
+    }
+  });
+
   return (
     <input
       className="search"
