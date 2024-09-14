@@ -315,6 +315,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     [onCloseMovie]
   );
 
+  console.log("hi");
   useEffect(
     function () {
       async function getMovieDetails() {
