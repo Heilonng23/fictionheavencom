@@ -339,7 +339,14 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
 
   const countRef = useRef(0);
 
-  useEffect(function () {}, [userRating]);
+  useEffect(
+    function () {
+      function callback() {
+        if (userRating) countRef.current === countRef.current + 1;
+      }
+    },
+    [userRating]
+  );
 
   const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId);
   const watchedUserRating = watched.find(
