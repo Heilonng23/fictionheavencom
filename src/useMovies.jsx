@@ -5,6 +5,8 @@ export function useMovies(query) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const KEY = "ff371009";
+
   useEffect(() => {
     const controller = new AbortController();
     async function fetchedMovies() {
@@ -39,11 +41,12 @@ export function useMovies(query) {
       return;
     }
 
-    handleCloseMovie();
+    //  handleCloseMovie();
     fetchedMovies();
 
     return () => {
       controller.abort();
     };
   }, [query]);
+  return { movies, isLoading, error };
 }
