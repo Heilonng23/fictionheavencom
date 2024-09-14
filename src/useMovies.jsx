@@ -9,10 +9,12 @@ export function useMovies(query) {
 
   useEffect(() => {
     const controller = new AbortController();
+
     async function fetchedMovies() {
       try {
         setIsLoading(true);
         setError("");
+
         const res = await fetch(
           `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
           { signal: controller.signal }
