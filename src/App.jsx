@@ -300,6 +300,8 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     onAddWatched(newWatchedMovie);
     onCloseMovie();
   }
+
+  const usekey = useKey();
   useEffect(
     function () {
       function callback(e) {
@@ -315,7 +317,6 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     [onCloseMovie]
   );
 
-  console.log("hi");
   useEffect(
     function () {
       async function getMovieDetails() {
