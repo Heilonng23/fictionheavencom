@@ -103,18 +103,6 @@ function Search({ query, setQuery }) {
     setQuery("");
   });
 
-  useEffect(() => {
-    function callback(e) {
-      if (e.code === "Enter") {
-        inputEl.current.focus();
-        setQuery("");
-      }
-    }
-
-    document.addEventListener("keydown", callback);
-    return () => document.removeEventListener("keydown", callback);
-  }, [setQuery]);
-
   return (
     <input
       className="search"
