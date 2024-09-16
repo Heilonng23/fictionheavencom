@@ -187,7 +187,7 @@ function WatchedSummary({ watched }) {
         </p>
         <p>
           <span>⏳</span>
-          <span>{Number(avgWatchedRuntime.toFixed(0))} min</span>
+          <span>{avgWatchedRuntime.toFixed(2)} min</span>
         </p>
       </div>
     </div>
